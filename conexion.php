@@ -1,10 +1,10 @@
 <?php
 class Conexion extends PDO
 {
-    public $hostdb = 'bvmsi8xlfpo4eoqm8huh-mysql.services.clever-cloud.com';
-    public $bdname = 'bvmsi8xlfpo4eoqm8huh';
-    public $usuario = 'ubbdnduwftfi4ixe';
-    public $password = 'byKV4JdznwI3aAe3so57';
+    public $hostdb = 'bnlurpqojiy6nuutu41n-mysql.services.clever-cloud.com';
+    public $bdname = 'bnlurpqojiy6nuutu41n';
+    public $usuario = 'uh9dqjgh7377m26v';
+    public $password = 'eohq1WQQm9HNiT3CPxyH';
 
     public function __construct()
     {
