@@ -24,7 +24,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 
  
     if ( isset( $_GET['id_denuncia'] ) ) {
-        $consulta = $PDO->prepare( "SELECT *FROM bvmsi8xlfpo4eoqm8huh WHERE id_denuncia=:id_denuncia" );
+        $consulta = $PDO->prepare( "SELECT *FROM DENUNCIAS WHERE id_denuncia=:id_denuncia" );
         $consulta->bindValue( ':id_denuncia', $_GET['id_denuncia'] );
         $consulta->execute();
         $consulta->setFetchMode( PDO::FETCH_ASSOC );
@@ -33,7 +33,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
         exit();
 
     } else {
-        $consulta = $PDO->prepare( "SELECT *FROM bvmsi8xlfpo4eoqm8huh" );
+        $consulta = $PDO->prepare( "SELECT *FROM DENUNCIAS" );
         $consulta->execute();
         $consulta->setFetchMode( PDO::FETCH_ASSOC );
         header( "HTTP/1.1 200 Datos Obtenidos general" );
@@ -46,7 +46,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		$queryInsert = "INSERT INTO bvmsi8xlfpo4eoqm8huh (servidor_denunciado, entidad_perteneciente, lugar_echos, descripcion_evento) 
+		$queryInsert = "INSERT INTO DENUNCIAS (servidor_denunciado, entidad_perteneciente, lugar_echos, descripcion_evento) 
         VALUES(:servidor_denunciado, :entidad_perteneciente, :lugar_echos, :descripcion_evento)";
 		$insertar = $PDO->prepare($queryInsert);
 	
@@ -67,7 +67,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 
     if($_SERVER['REQUEST_METHOD'] == 'PUT')
 	{		
-		$query = "UPDATE bvmsi8xlfpo4eoqm8huh SET servidor_denunciado=:servidor_denunciado, 
+		$query = "UPDATE DENUNCIAS SET servidor_denunciado=:servidor_denunciado, 
         entidad_perteneciente=:entidad_perteneciente, lugar_echos=:lugar_echos, 
         descripcion_evento=:descripcion_evento WHERE id_denuncia=:id_denuncia";
 
@@ -85,7 +85,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 
     if($_SERVER['REQUEST_METHOD'] == 'DELETE')
 {
-    $query = "DELETE FROM bvmsi8xlfpo4eoqm8huh WHERE id_denuncia=:id_denuncia";
+    $query = "DELETE FROM DENUNCIAS WHERE id_denuncia=:id_denuncia";
     $eliminar = $PDO->prepare($query);
     $eliminar->bindValue(':id_denuncia', $_GET['id_denuncia']);
     $eliminar->execute();
