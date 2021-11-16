@@ -43,7 +43,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
     }
 }
 
-
     if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		$queryInsert = "INSERT INTO DENUNCIAS (servidor_denunciado, entidad_perteneciente, lugar_echos, descripcion_evento) 
@@ -64,7 +63,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 			exit;
 		}
 	}
-   
+
     if($_SERVER['REQUEST_METHOD'] == 'PUT')
 	{		
 		$query = "UPDATE DENUNCIAS SET servidor_denunciado=:servidor_denunciado, 
